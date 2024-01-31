@@ -1,0 +1,112 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: 'Courgette';
+  font-weight: bolder;  
+  
+  background-color: #000;
+  color: #000;
+
+input {
+  display: none;
+}
+
+h1 {
+  font-family: 'Creepster', system-ui;
+}
+img {
+  width: 100%;
+  height: 80%;
+
+}
+
+.flip-book {
+  width: 45vh;
+  height: 70vh;
+  position: relative;
+  perspective:1500px;
+}
+.flip {
+  width: 100% ;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform-origin: left;
+  transform-style: preserve-3d;
+  transform: rotateY(0deg);
+  transform: .5s;
+  color: #000;
+}
+p {
+  font-size: 14px;
+  line-height: 24px;
+}
+.front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-style: solid;
+  border-color: rgb(230, 228, 227);
+  top:0;
+  left:0;
+  background-color: #fff;
+  box-sizing:border-box;
+  padding: 0 13px;
+  box-shadow: inset 20px 0 50px rgba(255, 153, 153, 0.5) 0 2px 5px rgb(255, 138, 138);
+}
+.back {
+  position:absolute;
+  width: 100%;
+  height: 100%;
+  top:0;
+  left:0;
+  z-index:99;
+  padding: 0 13px;
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  background-color: #ffffff;
+}
+
+.next-btn{
+  position:absolute;
+  bottom: 13px;
+  right:13px;
+  cursor:pointer;
+  color:#000;
+}
+
+.back-btn{
+  position:absolute;
+  bottom: 13px;
+  right:13px;
+  cursor:pointer;
+  color:#000000;
+}
+#p1 {
+  z-index: 4;
+}
+#p2 {
+  z-index: 3;
+}
+
+#p3 {
+  z-index: 2;
+}
+
+#c1:checked ~ .flip-book #p1{
+  transform: rotateY(-180deg);
+  z-index: 1;
+}
+#c2:checked ~ .flip-book #p2{
+  transform: rotateY(-180deg);
+  z-index: 2;
+}
+#c3:checked ~ .flip-book #p3{
+  transform: rotateY(-180deg);
+  z-index: 3;
+}}
